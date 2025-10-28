@@ -1,0 +1,22 @@
+registroG = []
+
+while True:   
+        nome = input("Digite um nome:")
+        email = (input("Digite um email:"))
+        registro = {'nome': nome , 'email' : email }
+        registroG.append(registro)
+
+        print(registro)
+        print(f'São {len(registroG)} pessoas registradas')
+        print("Para adicionar mais uma pessoa digite 1")
+        
+        question = int(input())
+
+        if question != 1 :
+                break
+    
+print(registroG)
+
+arq = open('arqvReg', 'wt')
+for p in registroG:
+        arq.write(f"{p['nome']}, {p['email']}\n")
